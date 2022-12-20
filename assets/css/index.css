@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #ebeaea;
+}
+
+nav {
+  display: flex;
+  padding-inline: 4vw;
+  background-color: white;
+  height: 9vh;
+  align-items: center;
+}
+
+.item-left {
+  display: flex;
+  gap: 4.5vw;
+
+  font-size: 1.5rem;
+  flex: 50%;
+}
+.active {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+}
+
+.imgNav {
+  width: 3vw;
+}
+
+.item-right a {
+  text-decoration: none;
+  padding: 10px 25px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  flex: 50%;
+}
+
+/* container */
+
+.container {
+  border-radius: 7px;
+  display: flex;
+  /* background-color: white; */
+  background-color: rgb(156, 98, 98);
+  margin-block: 8vh;
+  padding-inline: 3vw;
+  margin-inline: 4vw;
+  padding-bottom: 3vh;
+  /* height: 50ch; */
+}
+.content {
+  display: flex;
+  /* background-color: aqua; */
+  /* justify-content: en; */
+}
+
+.bio {
+  margin-top: 10vh;
+  width: 60%;
+}
+.bio article {
+  font-size: 2.8vh;
+}
+
+.bio h1 {
+  margin-bottom: 2vh;
+  /* margin-top: 3vh; */
+}
+
+.contact {
+  /* padding-right: 5px; */
+  align-items: center;
+  display: flex;
+  margin-top: 10vh;
+}
+
+.contact .btn {
+  /* margin-top: 3vh; */
+  margin-right: 1.7vw;
+  text-decoration: none;
+  color: white;
+  background-color: black;
+  padding: 1vh 2vw;
+  border-radius: 40px;
+}
+
+.contact img {
+  margin-left: 0.5vw;
+  width: 1vw;
+}
+
+.socmed {
+  display: flex;
+  margin-top: 10vh;
+  gap: 1vw;
+}
+
+.socmed img {
+  width: 2.5vw;
+  border-radius: 50%;
+}
+
+.mySelf {
+  width: 40%;
+  /* background-color: blue; */
+}
+
+.profImg {
+  text-align: center;
+  display: flex;
+  justify-content: end;
+  /* background-color: blue; */
+  /* width: 40%; */
+  margin-top: 7vh;
+}
+.profImg img {
+  /* border-radius: 15px; */
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 25vw;
+  /* justify-self: end; */
+}
+
+.profCard {
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.name {
+  padding: 1.5vh;
+}

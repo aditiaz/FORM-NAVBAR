@@ -42,8 +42,7 @@
       resize: none;
   }
 
-  .btn{
-    
+  .btn{    
     display: flex;
     justify-content: end;
     width: 105%;

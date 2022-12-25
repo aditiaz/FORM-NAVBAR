@@ -9,11 +9,11 @@ function getData() {
   let startDate = document.getElementById("start-date").value;
   let endDate = document.getElementById("end-date").value;
   let description = document.getElementById("description").value;
-  let image = document.getElementById("uploadPic").files;
   let nodeJs = document.getElementById("nodeJs").checked ? "./assets/images/nodejs.svg" : "";
   let reactJs = document.getElementById("reactJs").checked ? "./assets/images/reactjs.svg" : "";
   let golang = document.getElementById("golang").checked ? "./assets/images/golang.svg" : "";
   let python = document.getElementById("python").checked ? "./assets/images/python.svg" : "";
+  let image = document.getElementById("uploadPic").files;
 
   image = URL.createObjectURL(image[0]);
 
@@ -99,48 +99,44 @@ let month = [
   "Desember",
 ];
 
-function timePosted(time) {
-  let day = time.getDate();
-  let monthIndex = time.getMonth();
-  let year = time.getFullYear();
-  let hour = time.getHours();
-  let minute = time.getMinutes();
-  return `${day} ${month[monthIndex]} ${year} ${hour} : ${minute} WIB`;
-}
+// function timePosted(time) {
+//   let day = time.getDate();
+//   let monthIndex = time.getMonth();
+//   let year = time.getFullYear();
+//   let hour = time.getHours();
+//   let minute = time.getMinutes();
+//   return `${day} ${month[monthIndex]} ${year} ${hour} : ${minute} WIB`;
+// }
 
 let thousand = 1000;
 let sixty = 60;
 let day = 24;
 
-function getTimePeriod(time) {
-  let now = new Date();
-  let posted = new Date(time);
-  let period = now - posted;
-  let thousand = 1000;
-  let sixty = 60;
-  let day = 24;
-  let dayPeriod = Math.floor(period / (24 * sixty * sixty * thousand));
-  if (dayPeriod > 0) {
-    return daysDistance + " Days Ago";
-  } else {
-    let hoursPeriod = Math.floor(period / (sixty * sixty * thousand));
-    if (hoursPeriod > 0) {
-      return hoursPeriod + " Hours Ago";
-    } else {
-      let minutePeriod = Math.floor(period / (sixty * thousand));
-      if (minutePeriod > 0) {
-        return minutePeriod + " Minutes Ago";
-      } else {
-        let secondPeriod = Math.floor(period / thousand);
-        if (secondPeriod > 0) return secondPeriod + " sec";
-      }
-    }
-  }
-}
+// function getTimePeriod(time) {
+//   let now = new Date();
+//   let posted = new Date(time);
+//   let period = now - posted;
+//   let thousand = 1000;
+//   let sixty = 60;
 
-// setInterval(() => {
-//   showData();
-// }, 1000);
+//   let dayPeriod = Math.floor(period / (24 * sixty * sixty * thousand));
+//   if (dayPeriod > 0) {
+//     return daysDistance + " Days Ago";
+//   } else {
+//     let hoursPeriod = Math.floor(period / (sixty * sixty * thousand));
+//     if (hoursPeriod > 0) {
+//       return hoursPeriod + " Hours Ago";
+//     } else {
+//       let minutePeriod = Math.floor(period / (sixty * thousand));
+//       if (minutePeriod > 0) {
+//         return minutePeriod + " Minutes Ago";
+//       } else {
+//         let secondPeriod = Math.floor(period / thousand);
+//         if (secondPeriod > 0) return secondPeriod + " sec";
+//       }
+//     }
+//   }
+// }
 
 function durationTime(start, end) {
   let dStart = new Date(start);
@@ -179,3 +175,7 @@ function durationTime(start, end) {
     }
   }
 }
+
+// setInterval(() => {
+//   showData();
+// }, 1000);

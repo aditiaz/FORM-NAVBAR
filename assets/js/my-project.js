@@ -1,7 +1,4 @@
 let blogs = [];
-// let checkedInputs = [];
-
-// console.log(checkedInputs);
 
 function getData() {
   // event.preventDefault();
@@ -17,14 +14,14 @@ function getData() {
 
   image = URL.createObjectURL(image[0]);
 
-  let checkedInputs = [];
-  let checkedValue = document.getElementsByClassName("checked");
-  let data = checkedValue.length;
-  for (var i = 0; i < data; i++) {
-    if (checkedValue[i].checked == true) {
-      checkedInputs.push(checkedValue[i].value);
-    }
-  }
+  // let checkedInputs = [];
+  // let checkedValue = document.getElementsByClassName("checked");
+  // let data = checkedValue.length;
+  // for (var i = 0; i < data; i++) {
+  //   if (checkedValue[i].checked == true) {
+  //     checkedInputs.push(checkedValue[i].value);
+  //   }
+  // }
 
   let blog = {
     name,
@@ -33,7 +30,6 @@ function getData() {
     description,
     image,
     postedAt: new Date(),
-    checkedInputs,
     nodeJs,
     reactJs,
     golang,
@@ -108,9 +104,9 @@ let month = [
 //   return `${day} ${month[monthIndex]} ${year} ${hour} : ${minute} WIB`;
 // }
 
-let thousand = 1000;
-let sixty = 60;
-let day = 24;
+// let thousand = 1000;
+// let sixty = 60;
+// let day = 24;
 
 // function getTimePeriod(time) {
 //   let now = new Date();

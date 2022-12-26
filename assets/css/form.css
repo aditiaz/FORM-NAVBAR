@@ -101,6 +101,45 @@ textarea {
   width: 5.5vw;
   height: 4.4vh;
 }
+/*  */
+@media screen and (max-width: 1900px) {
+  .labelPic {
+    width: 5.5vw;
+    height: 4.4vh;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .labelPic {
+    width: 9.1vw;
+    height: 4.4vh;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .labelPic {
+    width: 10vw;
+    height: 4.4vh;
+  }
+}
+@media screen and (max-width: 892px) {
+  .labelPic {
+    width: 13.5vw;
+    height: 4.4vh;
+  }
+}
+
+@media screen and (max-width: 726px) {
+  .labelPic {
+    width: 15vw;
+    height: 4.4vh;
+  }
+}
+@media screen and (max-width: 576px) {
+  .labelPic {
+    width: 19.2vw;
+    height: 4.4vh;
+    /* color: red; */
+  }
+}
 
 .inputPic {
   display: flex;
@@ -141,6 +180,64 @@ textarea {
   width: 20vw;
   margin-block: 5vh;
   border: 1px solid grey;
+}
+.cardPro img {
+  width: 20vw;
+
+  border-radius: 10px;
+}
+@media screen and (max-width: 1900px) {
+  .cardPro {
+    /* width: 6vw; */
+    /* height: 4.4vh; */
+  }
+}
+@media screen and (max-width: 1500px) {
+  .cardPro {
+    /* width: 9.1vw; */
+    /* height: 4.4vh; */
+  }
+}
+@media screen and (max-width: 1000px) {
+  .cardPro {
+    /* width: 10vw; */
+    /* height: 4.4vh; */
+  }
+}
+@media screen and (max-width: 892px) {
+  .cardPro {
+    /* width: 13.5vw; */
+    /* height: 4.4vh; */
+  }
+}
+
+@media screen and (max-width: 726px) {
+  .cardPro {
+    /* width: 15vw; */
+    /* height: 4.4vh; */
+  }
+}
+@media screen and (max-width: 576px) {
+  .cardPro {
+    width: 50vw;
+    height: 50vh;
+    padding: 1vh 1vw;
+    margin-block: 0vh;
+  }
+  .cardPro img {
+    width: 100%;
+    height: 15vh;
+  }
+  /* .cardImg img {
+    width: 50px;
+  } */
+  .icons {
+    display: flex;
+    /* margin-block: 100vh; */
+    background-color: aqua;
+    height: 4vh;
+    /* gap: 0.5vw; */
+  }
 }
 
 .btnEdDel {

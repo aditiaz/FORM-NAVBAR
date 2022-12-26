@@ -23,13 +23,13 @@ function getData() {
   mailTo.href = `mailto:${emailReceiver}?subject=${subject}&body=Halo nama saya ${name}, ${message}, nomor telpon saya ${phoneNumber}`;
   mailTo.click();
 
-  let users = {
-    myName: name,
-    myEmail: email,
-    myPhone: phoneNumber,
-    mySubject: subject,
-    myMessage: message,
-  };
+  // let users = {
+  //   myName: name,
+  //   myEmail: email,
+  //   myPhone: phoneNumber,
+  //   mySubject: subject,
+  //   myMessage: message,
+  // };
 
-  console.log(users);
+  // console.log(users);
 }

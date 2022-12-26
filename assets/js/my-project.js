@@ -1,27 +1,26 @@
 let blogs = [];
 
 function getData() {
-  // event.preventDefault();
+  event.preventDefault();
   let name = document.getElementById("name").value;
   let startDate = document.getElementById("start-date").value;
   let endDate = document.getElementById("end-date").value;
   let description = document.getElementById("description").value;
-  let nodeJs = document.getElementById("nodeJs").checked ? "./assets/images/nodejs.svg" : "";
-  let reactJs = document.getElementById("reactJs").checked ? "./assets/images/reactjs.svg" : "";
-  let golang = document.getElementById("golang").checked ? "./assets/images/golang.svg" : "";
-  let python = document.getElementById("python").checked ? "./assets/images/python.svg" : "";
+  // let nodeJs = document.getElementById("nodeJs").checked ? "./assets/images/nodejs.svg" : "";
+  // let reactJs = document.getElementById("reactJs").checked ? "./assets/images/reactjs.svg" : "";
+  // let golang = document.getElementById("golang").checked ? "./assets/images/golang.svg" : "";
+  // let python = document.getElementById("python").checked ? "./assets/images/python.svg" : "";
   let image = document.getElementById("uploadPic").files;
-
   image = URL.createObjectURL(image[0]);
+  let checkedValue = document.getElementsByClassName("checked");
 
-  // let checkedInputs = [];
-  // let checkedValue = document.getElementsByClassName("checked");
-  // let data = checkedValue.length;
-  // for (var i = 0; i < data; i++) {
-  //   if (checkedValue[i].checked == true) {
-  //     checkedInputs.push(checkedValue[i].value);
-  //   }
-  // }
+  let checkedInputs = [];
+  let data = checkedValue.length;
+  for (var i = 0; i < checkedValue.length; i++) {
+    if (checkedValue[i].checked) {
+      checkedInputs.push(checkedValue[i].value);
+    }
+  }
 
   let blog = {
     name,
@@ -30,12 +29,9 @@ function getData() {
     description,
     image,
     postedAt: new Date(),
-    nodeJs,
-    reactJs,
-    golang,
-    python,
+    checkedInputs,
   };
-
+  // console.log(checkedInputs);
   // console.log(blog);
   blogs.push(blog);
   showData();
@@ -63,11 +59,16 @@ function showData() {
     </article>
     <!-- icons -->
     <div class="icons">
+    ${(function icon() {
+      let string = "";
+      for (let j = 0; j < blogs[i].checkedInputs.length; j++) {
+        string += `<img src="assets/images/${blogs[i].checkedInputs[j]}.svg" alt="icon" />`;
+      }
+      return string;
+    })()}
 
-    <img src="${blogs[i].nodeJs}" alt="" />
-    <img src="${blogs[i].reactJs}" alt="" />
-    <img src="${blogs[i].golang}" alt="" />
-    <img src="${blogs[i].python}" alt="" />
+
+  
 
 
     </div>
@@ -145,26 +146,39 @@ function durationTime(start, end) {
 
   let monthPeriod = Math.floor(period / (30 * day * sixty * sixty * thousand));
   if (monthPeriod > 0) {
-    return monthPeriod + " month";
+    return monthPeriod > 1
+      ? "Duration " + weekPeriod + " months"
+      : "Duration " + weekPeriod + " month";
   } else {
     let weekPeriod = Math.floor(period / (7 * day * sixty * sixty * thousand));
     if (weekPeriod > 0) {
-      return weekPeriod + " weeks";
+      return weekPeriod > 1
+        ? "Duration " + weekPeriod + " weeks"
+        : "Duration " + weekPeriod + " week";
     } else {
       let daysPeriod = Math.floor(period / (day * sixty * sixty * thousand));
       if (daysPeriod > 0) {
-        return daysPeriod + " Days Ago";
+        return daysPeriod > 1
+          ? "Duration " + daysPeriod + " days "
+          : "Duration " + daysPeriod + " day ";
       } else {
         let hoursPeriod = Math.floor(period / (sixty * sixty * thousand));
         if (hoursPeriod > 0) {
-          return hoursPeriod + " Hours Ago";
+          return hoursPeriod > 1
+            ? "Duration " + hoursPeriod + " hours "
+            : "Duration " + hoursPeriod + " hour ";
         } else {
           let minutePeriod = Math.floor(period / (sixty * thousand));
           if (minutePeriod > 0) {
-            return minutePeriod + " Minutes Ago";
+            return minutePeriod > 1
+              ? "Duration " + minutePeriod + " minutes "
+              : "Duration " + minutePeriod + " minute ";
           } else {
             let secondPeriod = Math.floor(period / thousand);
-            if (secondPeriod > 0) return secondPeriod + " sec";
+            if (secondPeriod > 0)
+              return secondPeriod > 1
+                ? "Duration " + secondPeriod + " seconds"
+                : "Duration " + secondPeriod + " seconds ";
           }
         }
       }
